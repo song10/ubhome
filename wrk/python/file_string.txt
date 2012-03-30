@@ -1,0 +1,4 @@
+hello, wolrd!
+this is a template test file.
+all contents can be read as a single string.
+:)
