@@ -8,3 +8,4 @@ var server = dnode(function (client) {
     }
 });
 server.listen(5050);
+console.log("listening on port %d in %s mode", 5050, 'server');

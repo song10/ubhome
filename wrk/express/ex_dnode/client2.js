@@ -6,7 +6,7 @@ var client = dnode({
     }
 });
 
-client.connect(5050, function (remote) {
+client.connect(5050, '114.34.231.65', function (remote) {
     remote.calculate(10, 20, function (n) {
         console.log('the result is ' + n);
     });
