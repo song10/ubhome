@@ -6,7 +6,7 @@ hardstatus alwayslastline "%{= bg}%-Lw%{= bw}%n%f %t%{-}%+Lw %=| %{= bw} %0c:%s 
 #hardstatus alwayslastline "%{= bk}%n%f %{= bY} %t%{-}%+Lw  @ %H %{-} %= %{= bR} %l %{-} | %{= KG} %0c:%s %{-} "
 hardstatus on
 
-screen -t $HOSTNAME 0
+screen -t miniub 0
 screen -t wrk 1
 screen -t tmp 2
 screen -t bin 3
