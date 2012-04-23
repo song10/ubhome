@@ -4,3 +4,17 @@ html
   p Hello #{name}
   div#container
   div.user-details
+  #foo
+  .bar
+  p
+   | foo bar baz
+   | rawr rawr
+   | super cool
+   | go jade go
+  - var html = "<script></script>"
+  !{html}
+  label
+   | Username:
+   input(name='user[name]')
+  label Username:
+   input(name='user[name]')
