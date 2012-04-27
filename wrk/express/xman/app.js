@@ -10,11 +10,16 @@ var express = require('express')
 var app = module.exports = express.createServer();
 params.extend(app);
 
-app.param('fbcb', /^(\w+)\.\.(\w+)?$/);
+app.param('range', /^(\w+)\.\.(\w+)?$/);
+//app.param('fbcb', /^(auth\/facebook\/callback\?code=.+)#_=_$/);
+app.param('fbcb', /^(auth)(.*)/);
 
 // everyauth
 
 var everyauth = require('everyauth');
+//everyauth.helpExpress(app);
+everyauth.helpExpress(app, { userAlias: '__user__' });
+
 var conf = require('./config.json');
 everyauth.twitter
   .consumerKey(conf.twit.consumerKey)
@@ -41,6 +46,7 @@ everyauth.facebook
     //// view notifying the user that their authentication failed and why.
   //})
   .findOrCreateUser(function (session, accessToken, accessTokExtra, fbUserMetadata) {
+    console.log('**fbUserMetadata**');
     console.log(fbUserMetadata);
     return this.Promise().fulfill(fbUserMetadata);
     })
@@ -187,14 +193,28 @@ app.get('/new', routes.new_get);
 app.post('/new', routes.new_post);
 
 // facebook workaround
-app.get('/test/:id/?$', function(req,res) {
-  res.send(objectToString(req.params));
-  console.log(req.params);
-  });
-app.get('/test2/:fbcb', function(req,res) {
+//app.get('/test/:id/?$', function(req,res) {
+  //res.send(objectToString(req.params));
   //console.log(req.params);
-  var results = req.params.fbcb[0].keyMatch('(?P<num1>\\w+)\\.\\.(?P<num2>\\d+)', "g");
+  //});
+//app.get('/test2/:range', function(req,res) {
+  ////console.log(req.params);
+  //var results = req.params.range[0].keyMatch('(?P<num1>\\w+)\\.\\.(?P<num2>\\d+)', "g");
+  ////console.log(results);
+  //res.send(objectToString(req.params)+'<br/>'+objectToString({'fbcb': results[0]}));
+  //});
+app.get('*', function(req,res) {
+  //console.log('**REQ**');
+  //console.log(req.url);
+  var results = req.url.keyMatch('^(/auth/facebook/callback\\?code=.+)$', "g");
+  //console.log('**RZ**');
   //console.log(results);
-  res.send(objectToString(req.params)+'<br/>'+objectToString({'fbcb': results[0]}));
+  if (!results) {
+    console.log('**404**');
+    console.log(req.url);
+    res.send(404);
+  }else{
+    res.send(objectToString(req.url)+'<br/>'+objectToString({'fbcb': results[0]}));
+  }
+  //console.log('**END**');
   });
-app.get('^(\/auth\/facebook\/callback\?code=.+)#_=_$', routes.fb_wa);

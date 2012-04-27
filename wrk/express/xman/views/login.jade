@@ -1,14 +1,13 @@
 !!! 5
 html
-    body
-        - if (user != undefined)
-            p somebody
-            span= "Hi, " + user + " "
-            a(href="/logout")= "Logout"
-        - else
-            p nobody
-            a(href= "/auth/twitter")= "twitter Login"
-            br
-            a(href= "/auth/facebook")= "facebook Login"
-            br
-            a(href= "/auth/google")= "google Login"
+	body
+		p X Management System
+		- if (user != undefined)
+			span= "Hi, " + user + " "
+			a(href="/logout")= "Logout"
+		- else
+			a(href= "/auth/twitter")= "twitter Login"
+			br
+			a(href= "/auth/facebook")= "facebook Login"
+			br
+			a(href= "/auth/google")= "google Login"
