@@ -72,6 +72,8 @@ app.post "/new", routes.new_post
 app.get "/order", routes.order_get
 app.post "/order", routes.order_post
 
+app.get "/jqui", routes.jqui
+
 #app.get "*", (req, res) ->
 #	results = req.url.keyMatch("^(/auth/facebook/callback\\?code=.+)$", "g")
 #	unless results

@@ -86,3 +86,10 @@ exports.order_post = (req, res) ->
 		created_at: new Date()
 		, (err, docs) ->
 			res.redirect "/"
+
+path = require("path");
+exports.jqui = (req, res) ->
+    filepath = path.normalize( __dirname + "/../public/selectable.html");
+    console.log( filepath );
+    res.sendfile( filepath );
+

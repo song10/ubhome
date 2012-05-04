@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<SCRIPT src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></SCRIPT>
-	<SCRIPT src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></SCRIPT>
+
 	<SCRIPT src="http://jquery-ui.googlecode.com/svn/tags/latest/external/jquery.bgiframe-2.1.2.js" type="text/javascript"></SCRIPT>
 	<SCRIPT src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/minified/i18n/jquery-ui-i18n.min.js" type="text/javascript"></SCRIPT>
 
@@ -24,8 +25,17 @@
 		$( "#selectable" ).selectable({
 			//create: function(event, ui) { alert("create"); },
 			selected: function(event, ui) {
-				$( ".ui-selected", this ).each(function() { console.log($( "#selectable li" ).index(this)); });
-				//console.log($( ".ui-selected", this ));
+				var result = $( "#select-last" ).empty();
+				$( ".ui-selected", this ).each(function() {
+					var index = $( "#selectable li" ).index( this );
+					result.append( " #" + ( index + 1 ) );
+					//location.replace("http://www.google.com/");
+					if (1 == index)
+						self.location="http://www.google.com/";
+					else if (3 == index)
+						self.location="http://tw.yahoo.com/";					
+					false;
+				});
 			},
 			stop: function() {
 				var result = $( "#select-result" ).empty();
@@ -40,12 +50,14 @@
 </head>
 <body>
 
-<P id="feedback"><SPAN>You've selected:</SPAN> <SPAN id="select-result">none</SPAN>. <SPAN>latest selected:</SPAN> <SPAN id="select-last">none</SPAN>.</P>
+<P id="feedback"><SPAN>You've selected:</SPAN> <SPAN id="select-result">none</SPAN>.</P>
+<P> <SPAN>latest selected:</SPAN> <SPAN id="select-last">none</SPAN>.</P>
+
 <ul id="selectable">
 <li>Item 1</li>
-<li>Item 2</li>
+<li>google</li>
 <li>Item 3</li>
-<li>Item 4</li>
+<li>yahoo</li>
 <li>Item 5</li>
 </ul>
 
