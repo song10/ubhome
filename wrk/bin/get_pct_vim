@@ -1,5 +1,6 @@
 if [ -d pct.vim ]; then
     cd pct.vim/
+    git reset --hard
     git pul
 else
     git clone git://github.com/pct/pct.vim.git

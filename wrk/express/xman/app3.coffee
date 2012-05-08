@@ -233,9 +233,9 @@ app.post "/new", ensureAuthenticated, routes.new_post
 app.get "/order", ensureAuthenticated, routes.order_get
 app.post "/order", ensureAuthenticated, routes.order_post
 
-app.all "/*", (req, res, next) ->
-	console.log req.url
-	next()
-
+#app.all "/*", (req, res, next) ->
+#	console.log req.url
+#	next()
+#
 #
 exports.everyauth = everyauth

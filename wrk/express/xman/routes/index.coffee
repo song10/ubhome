@@ -13,14 +13,6 @@ exports.home = (req, res) ->
 		locals: `undefined`
 
 exports.list = (req, res) ->
-	everyauth = require("../app3").everyauth
-	unless req.loggedIn
-		everyauth.password.loginSuccessRedirect "/list"
-		res.redirect "/login"
-		return
-	else
-		everyauth.password.loginSuccessRedirect "/"
-
 	order.findAll (err, docs) ->
 		if `undefined` == docs
 			docs = {}
