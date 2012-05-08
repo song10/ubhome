@@ -1,1 +1,1 @@
-npm install express express-params cradle everyauth stylus jade
+npm install express express-params cradle everyauth stylus jade markdown

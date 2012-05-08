@@ -1,0 +1,53 @@
+!!! 5
+html
+  head
+    link(type='text/css', href='/css/smoothness/jquery-ui-1.8.20.custom.css', rel='stylesheet')
+    script(type='text/javascript', src='/js/jquery-1.7.2.min.js')
+    script(type='text/javascript', src='/js/jquery-ui-1.8.20.custom.min.js')
+    style(type='text/css')
+      #feedback { font-size: 1.4em; }
+      #selectable .ui-selecting { background: #FECA40; }
+      #selectable .ui-selected { background: #F39814; color: white; }
+      #selectable { list-style-type: none; margin: 0; padding: 0; }
+      #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 2.4em; }
+    script(type='text/javascript')
+      $(function() {
+      $( "#selectable" ).selectable({
+      //create: function(event, ui) { alert("create"); },
+      selected: function(event, ui) {
+      var result = $( "#select-last" ).empty();
+      $( ".ui-selected", this ).each(function() {
+      var index = $( "#selectable li" ).index( this );
+      result.append( " #" + ( index + 1 ) );
+      //location.replace("http://www.google.com/");
+      if (1 == index)
+      self.location="http://www.google.com/";
+      else if (3 == index)
+      self.location="http://tw.yahoo.com/";
+      false;
+      });
+      },
+      stop: function() {
+      var result = $( "#select-result" ).empty();
+      $( ".ui-selected", this ).each(function() {
+      var index = $( "#selectable li" ).index( this );
+      result.append( " #" + ( index + 1 ) );
+      });
+      }
+      });
+      });
+  body
+    p#feedback
+      span You've selected:
+      span#select-result none
+      | .
+    p
+      span latest selected:
+      span#select-last none
+      | .
+    ul#selectable
+      li.ui-state-default Item 1
+      li.ui-state-default google
+      li.ui-state-default Item 3
+      li.ui-state-default yahoo
+      li.ui-state-default Item 5

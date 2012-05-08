@@ -12,37 +12,33 @@ html
       #selectable li { margin: 3px; padding: 0.3em; font-size: 1.4em; height: 1.4em; }
     script(type='text/javascript')
         $(function() {
-            $( "#selectable" ).selectable({
+            $("#selectable").selectable({
                 //create: function(event, ui) { alert("create"); },
                 selected: function(event, ui) {
-                    var result = $( "#select-last" ).empty();
-                    $( ".ui-selected", this ).each(function() {
-                        var index = $( "#selectable li" ).index( this );
-                        result.append( " #" + ( index + 1 ) );
+                    var result = $("#select-last").empty();
+                    $(".ui-selected", this).each(function() {
+                        var index = $("#selectable li").index(this);
+                        result.append(" #" + ( index + 1 ));
                         //location.replace("http://www.google.com/");
                         if (0 == index)
-                            self.location="/auth/twitter";
-                        else if (1 == index)
-                            self.location="/auth/google";
-                        else if (2 == index)
-                            self.location="/auth/facebook";
+                            self.location="/company";
                         else if (3 == index)
-                            self.location="/login2";
+                            self.location="/list";
                         else
-                            alert("not possible");
+                            result.append("not yet");
                         false;
                     });
                 }
             });
         });
   body
-    p Eino Pad Login System
     ul#selectable
-      li.ui-state-default
-        a(href= "/auth/twitter")= "Twitter"
-      li.ui-state-default
-        a(href= "/auth/google")= "Google"
-      li.ui-state-default
-        a(href= "/auth/facebook")= "Facebook"
-      li.ui-state-default
-        a(href= "/login2")= "Password"
+      li.ui-state-default 同福沛特有限公司
+      li.ui-state-default 產品型錄
+      li.ui-state-default 客服窗口
+      li.ui-state-default 訂單查詢
+      li.ui-state-default 人力資源
+    p
+      span latest selected:
+      span#select-last none
+      | .

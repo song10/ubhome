@@ -4,6 +4,33 @@ order = new Order("http://localhost", 5984, "einopad")
 m_user = undefined
 
 exports.index = (req, res) ->
+	res.redirect "/home"
+	return
+
+exports.home = (req, res) ->
+	res.render "home",
+		layout: false
+		locals: `undefined`
+
+exports.list = (req, res) ->
+	everyauth = require("../app3").everyauth
+	unless req.loggedIn
+		everyauth.password.loginSuccessRedirect "/list"
+		res.redirect "/login"
+		return
+	else
+		everyauth.password.loginSuccessRedirect "/"
+
+	order.findAll (err, docs) ->
+		if `undefined` == docs
+			docs = {}
+		res.render "list",
+			layout: false
+			locals:
+				title: "Eino Pad Order List"
+				orders: docs
+
+exports.list0 = (req, res) ->
 	unless req.loggedIn
 		res.redirect "/login"
 		return
@@ -15,6 +42,9 @@ exports.index = (req, res) ->
 			_user = req.session.auth.google.user.name
 		else if req.session.auth.facebook
 			_user = req.session.auth.facebook.user.name
+		else if req.session.auth.userId
+			_user = req.session.auth.userId
+#			console.log req.session.auth
 
 	unless _user
 		res.redirect "/login"
@@ -23,6 +53,8 @@ exports.index = (req, res) ->
 		m_user = _user
 
 	order.findAll (err, docs) ->
+		if `undefined` == docs
+			docs = {}
 		res.render "index",
 			locals:
 				title: "Eino Pad Order"
@@ -87,9 +119,18 @@ exports.order_post = (req, res) ->
 		, (err, docs) ->
 			res.redirect "/"
 
-path = require("path");
+path = require("path")
 exports.jqui = (req, res) ->
-    filepath = path.normalize( __dirname + "/../public/selectable.html");
-    console.log( filepath );
-    res.sendfile( filepath );
+#	console.log req.query
+#	console.log req.query.page
+#	console.log req.params
+#	console.log req.params[0]
+#	filepath = path.normalize (__dirname + "/../public/jqui/" + req.params.userId + ".html")
+#	console.log filepath
+#	res.sendfile filepath
 
+	filepath = "jqui/"+req.params.userId
+#	console.log filepath
+	res.render filepath,
+		layout: false
+		locals: `undefined`
