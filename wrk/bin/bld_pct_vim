@@ -13,3 +13,7 @@ cd pct.vim/.vim/bundle/Command-T/ruby/command-t/; ruby extconf.rb; make; sudo ma
 cd ~
 ln -s wrk/pct.vim/.vimrc
 ln -s wrk/pct.vim/.vim
+
+# patch
+sed -i '/echo.\+"withdrawn"/ d' ~/.vim/bundle/man-page-view/plugin/withdrawn.vim
+echo "set nobackup" >> ~/.vimrc
