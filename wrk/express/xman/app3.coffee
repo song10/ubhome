@@ -131,8 +131,19 @@ everyauth.password
 		login = newUserAttrs[@loginKey()]
 		usersByLogin[login] = addUser(newUserAttrs)
 	)
-	.loginSuccessRedirect("/")
-	.registerSuccessRedirect "/"
+#	.loginSuccessRedirect("/")
+#	.registerSuccessRedirect "/"
+	.respondToLoginSucceed((res, user, data) ->
+		if user
+			res.writeHead 303,
+				Location: data.session.redirectTo
+			res.end()
+	)
+	.respondToRegistrationSucceed (res, user, data) ->
+		res.writeHead 303,
+			Location: data.session.redirectTo
+		res.end()
+
 #
 everyauth.twitter
 	.consumerKey(conf.twit.consumerKey)
@@ -140,7 +151,13 @@ everyauth.twitter
 	.findOrCreateUser((session, token, secret, user) ->
 		@Promise().fulfill user
 	)
+	.sendResponse (res, data) ->
+		session = data.session
+		redirectTo = session.redirectTo
+		delete session.redirectTo
+		res.redirect redirectTo
 	.redirectPath "/"
+
 #
 everyauth.facebook
 	.myHostname("http://einopad.mooo.com")
@@ -149,7 +166,14 @@ everyauth.facebook
 	.findOrCreateUser((session, accessToken, accessTokExtra, fbUserMetadata) ->
 		@Promise().fulfill fbUserMetadata
 	)
-	.moduleTimeout(-1).redirectPath "/"
+	.moduleTimeout(-1)
+	.sendResponse (res, data) ->
+		session = data.session
+		redirectTo = session.redirectTo
+		delete session.redirectTo
+		res.redirect redirectTo
+	.redirectPath "/"
+
 #
 everyauth.google
 	.appId(conf.google.appId)
@@ -160,7 +184,13 @@ everyauth.google
 		@Promise().fulfill googleUserMetadata
 	)
 	.moduleTimeout(-1)
+	.sendResponse (res, data) ->
+		session = data.session
+		redirectTo = session.redirectTo
+		delete session.redirectTo
+		res.redirect redirectTo
 	.redirectPath "/"
+
 #
 app.configure ->
 	app.set "views", __dirname + "/views"
@@ -186,15 +216,26 @@ app.configure "production", ->
 app.listen 8080, ->
 	console.log "Express server listening on port %d in %s mode", app.address().port, app.settings.env
 #
+ensureAuthenticated = (req, res, next) ->
+	return next() if req.loggedIn
+	#console.log req
+	req.session.redirectTo = req.url;
+	res.redirect "/login"
+
+#
 app.get "/", routes.index
-app.get "/home", routes.home
-app.get "/list", routes.list
 app.get "/login", routes.login
-app.get "/new", routes.new_get
-app.post "/new", routes.new_post
-app.get "/order", routes.order_get
-app.post "/order", routes.order_post
+app.get "/home", routes.home
 app.get "/jqui/:userId", routes.jqui
+app.get "/list", ensureAuthenticated, routes.list
+app.get "/new", ensureAuthenticated, routes.new_get
+app.post "/new", ensureAuthenticated, routes.new_post
+app.get "/order", ensureAuthenticated, routes.order_get
+app.post "/order", ensureAuthenticated, routes.order_post
+
+app.all "/*", (req, res, next) ->
+	console.log req.url
+	next()
 
 #
 exports.everyauth = everyauth
