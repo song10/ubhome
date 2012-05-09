@@ -3,3 +3,10 @@ sudo apt-get install -y \
   build-essential \
   vim \
   openssh-server sshfs \
+  ruby-dev \
+  libssl-dev \
+
+if [ "srv" = "$1" ]; then
+#    sudo apt-get install -y \
+
+fi
