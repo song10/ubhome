@@ -1,0 +1,15 @@
+R=$(readlink -m $(dirname $0)/..)
+cd $R
+
+T=ninja
+if [ -d $T/ ]; then
+  cd $T
+  git reset --hard
+  git pul
+else
+  git clone https://github.com/martine/ninja.git
+  cd $T/
+fi
+
+./bootstrap.py
+ln ninja ~/opt/bin/

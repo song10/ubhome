@@ -17,6 +17,7 @@
 #	praise = blame
 
 [core]
+	editor = vim
 	whitespace = tabwidth=8
 
 [apply]
