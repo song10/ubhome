@@ -1,13 +1,8 @@
 R=$(readlink -m $(dirname $0)/..)
 cd $R
 
-if [ `perl -e "exit 1 unless 'init'=~m/ ?init ?/"` ]; then
+perl -e "exit 1 unless '$*'=~m/ ?init ?/" && \
   sudo apt-get install -y libssl-dev libltdl-dev
-else
-  echo xxx
-fi
-
-exit 0
 
 T=node
 if [ -d $T/ ]; then
@@ -18,7 +13,6 @@ else
   git clone git://github.com/joyent/node.git
   cd $T/
 fi
-
 
 ./configure --prefix=$HOME/opt
 make

@@ -12,4 +12,4 @@ else
 fi
 
 ./bootstrap.py
-ln ninja ~/opt/bin/
+ln -f ninja ~/opt/bin/
