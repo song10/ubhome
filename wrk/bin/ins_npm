@@ -1,1 +1,0 @@
-curl http://npmjs.org/install.sh | npm_config_prefix=$HOME/opt sh
