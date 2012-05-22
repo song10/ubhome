@@ -4,6 +4,10 @@ cd $R
 expr "$*" : '.* \?init \?' > /dev/null && \
   sudo apt-get install -y libssl-dev libltdl-dev
 
+force=no
+expr "$*" : '.* \?force \?' > /dev/null && \
+  force=yes
+
 T=node
 build=yes
 if [ -d $T/ ]; then
@@ -17,7 +21,7 @@ else
   cd $T/
 fi
 
-if [ "yes" = "$build" ]; then
+if [ "yes" = "$build" -o "yes" = "$force" ]; then
   ./configure --prefix=$HOME/opt
   make
   make install
