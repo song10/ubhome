@@ -1,0 +1,29 @@
+# ROOT code formatting style
+#--indent=spaces=3 # three spaces per indentation level
+#--convert-tabs # convert tabs into spaces
+
+--brackets=stroustrup # '{' on new line only for func
+
+--indent-switches # case block is indented wrt switch
+--indent-namespaces
+--indent-preprocessor # indent pp statements ending on '\'
+--max-instatement-indent=60 # if indentation of continuing line is <60, indent
+--min-conditional-indent=0 # no extra indent for continued conditions
+
+--pad-oper # space around operands
+--pad-header # add a space around () after if, while,...
+--unpad-paren # and remove all unwanted padding around parentheses
+
+#--suffix=none # no backups - we have subversion
+#--recursive # so you can do astyle "core/*.cxx" "core/*.h"
+
+--style=linux
+--indent=force-tab=4
+--indent-classes
+--indent-cases
+--indent-preprocessor
+--break-blocks
+--pad-oper
+--unpad-paren
+--pad-header
+--align-pointer=name
