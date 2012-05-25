@@ -1,1 +1,1 @@
-sh ~/wrk/bin/ins_npm
+sh ~/wrk/bin/get_npm
