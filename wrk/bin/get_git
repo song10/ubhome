@@ -18,6 +18,6 @@ else
 fi
 
 if [ "yes" = "$build" ]; then
-  make prefix=$HOME/opt
-# make prefix=$HOME/opt all doc info
+  make prefix=$HOME/opt all # doc info
+  make prefix=$HOME/opt install # install-doc install-html install-info
 fi

@@ -32,4 +32,5 @@ echo 'set ts=4' >> ~/.vimrc
 echo 'set noexpandtab' >> ~/.vimrc
 echo '" highlight tabs and trailing spaces' >> ~/.vimrc
 echo 'set listchars=tab:>-,trail:-' >> ~/.vimrc
-echo 'set list' >> ~/.vimrc
+echo 'set nolist' >> ~/.vimrc
+echo 'set mouse=' >> ~/.vimrc
