@@ -1,2 +1,0 @@
-#!/bin/sh
-ls -p $1 | grep -v "\/"
