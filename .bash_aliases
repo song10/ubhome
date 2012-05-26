@@ -6,5 +6,5 @@ alias sh='bash'
 alias vi='vii'
 PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/my/bin:~/opt/bin
-source ~/wrk/bin/langrc
+source ~/bin/langrc
 export NODE_PATH=$HOME/opt/lib/node_modules/
