@@ -1,2 +1,0 @@
-#!/bin/sh
-unexpand -t4 --first-only $*

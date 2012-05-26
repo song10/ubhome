@@ -1,2 +1,0 @@
-export CVSROOT=:ext:atclnx01:/home/project/PVC_CENTRALDIR
-export CVS_RSH=ssh
