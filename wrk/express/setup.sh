@@ -1,1 +1,1 @@
-sh ~/wrk/bin/get_npm
+sh ~/bin/get_npm
