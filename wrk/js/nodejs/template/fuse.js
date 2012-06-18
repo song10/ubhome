@@ -22,13 +22,15 @@ var opt = nopt(knownOpts)
 //console.log(opt)
 
 //require('jquery').extend(opt, d4)
+d4._ = { print:print }
 opt = merge(d4, opt)
+//print(opt)
 
 function test () {
 	print(__filename)
 	print(__dirname)
 }
-test()
+//test()
 
 if (! opt.template) {
 	print('no template given, abort!')
