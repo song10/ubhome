@@ -1,1 +1,1 @@
-print = console.log
+alert = print = console.log
