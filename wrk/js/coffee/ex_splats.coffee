@@ -20,8 +20,6 @@ contenders = [
 
 awardMedals contenders...
 
-alert = console.log
-
 alert "Gold: " + gold
 alert "Silver: " + silver
 alert "The Field: " + rest

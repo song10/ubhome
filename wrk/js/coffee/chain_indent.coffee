@@ -1,9 +1,9 @@
 fn = (x) ->
-    console.log "#" + x + "#"
+    print "# #{x} #"
     this
 
 fn2 = (x) ->
-    console.log "*" + x + "*"
+    print "* #{x} *"
     this
 
 a =

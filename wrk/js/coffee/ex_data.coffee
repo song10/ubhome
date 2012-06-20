@@ -14,8 +14,6 @@ kids =
 		name: "Ida"
 		age: 9
 
-print = console.log
-
 print song
 print singers
 print bitlist

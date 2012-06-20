@@ -5,6 +5,4 @@ changeNumbers = () ->
 
 inner = changeNumbers()
 
-print = console.log
-
 print "inner = #{inner}"

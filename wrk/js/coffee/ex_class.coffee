@@ -1,5 +1,3 @@
-alert = console.log
-
 class Animal
   constructor: (@name) ->
 
