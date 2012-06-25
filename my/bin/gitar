@@ -1,2 +1,0 @@
-name=linux-2.6-$(git log master --pretty=format:"%h" -1)
-git archive --prefix $name/ master | bzip2 > ../$name.tar.bz2

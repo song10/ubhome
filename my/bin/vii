@@ -1,7 +1,0 @@
-#!/usr/bin/perl
-if (1 > @ARGV) { print "no file to edit\n"; exit; }
-my $arg = $ARGV[0] || exit;
-my @args = split /[:,]/, $arg;
-if (defined($args[1])) { $args[1] = '+' . $args[1]; }
-$#args = 1; # preserve first 2 args
-system("vi @args");
