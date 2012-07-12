@@ -16,3 +16,6 @@ PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/my/bin:~/opt/bin
 source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
+
+export JAVA_HOME=~/Downloads/jdk1.7.0_03
+export PATH=$JAVA_HOME/bin:$PATH
