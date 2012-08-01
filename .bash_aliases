@@ -19,3 +19,5 @@ export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
 
 export JAVA_HOME=~/Downloads/jdk1.7.0_03
 export PATH=$JAVA_HOME/bin:$PATH
+
+rm -f ~/.goutputstream-*
