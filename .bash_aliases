@@ -19,5 +19,11 @@ export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
 
 export JAVA_HOME=~/Downloads/jdk1.7.0_03
 export PATH=$JAVA_HOME/bin:$PATH
+#export UBUNTU_MENUPROXY=libappmenu.so
+export EDITOR=vi
+
+if [ -f ~/.bash_insyde ]; then
+    . ~/.bash_insyde
+fi
 
 rm -f ~/.goutputstream-*
