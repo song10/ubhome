@@ -1,5 +1,6 @@
 alias rm='rm -i'
 alias ls='ls --color=auto --group-directories-first'
+alias l='ls'
 alias ll='ls -hlF'
 alias lll='ll -a'
 alias sh='bash'
