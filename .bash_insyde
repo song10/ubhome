@@ -6,3 +6,4 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 #locale-gen en_US.UTF-8
 #sudo dpkg-reconfigure locales
+export CIMPLE_MOF_PATH=/usr/share/mof/cim-current
