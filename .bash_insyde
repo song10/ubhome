@@ -1,3 +1,4 @@
+umask 002
 INSYDEEMAIL='rex.cho@insyde.com'
 export EMAIL="Rex Cho <$INSYDEEMAIL>"
 alias mail="mail -aFrom:$INSYDEEMAIL"
