@@ -19,10 +19,6 @@ PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/my/bin:~/opt/bin
 source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
-
-export JAVA_HOME=~/opt/jdk1.7.0_07
-export PATH=$JAVA_HOME/bin:$PATH
-#export UBUNTU_MENUPROXY=libappmenu.so
 export EDITOR=vi
 
 if [ -f ~/.bash_insyde ]; then
