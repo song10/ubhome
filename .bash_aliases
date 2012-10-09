@@ -21,6 +21,10 @@ source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
 export EDITOR=vi
 
+function title {
+  echo -en "\033]2;$1\007"
+}
+
 if [ -f ~/.bash_insyde ]; then
     . ~/.bash_insyde
 fi
