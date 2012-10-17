@@ -30,4 +30,4 @@ if [ -f ~/.bash_insyde ]; then
 fi
 
 rm -f ~/.goutputstream-*
-title $HOSTNAME
+title $HOSTNAME > /dev/null
