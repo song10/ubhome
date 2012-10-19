@@ -30,4 +30,5 @@ if [ -f ~/.bash_insyde ]; then
 fi
 
 rm -f ~/.goutputstream-*
-title $HOSTNAME > /dev/null
+
+x=$(env|grep DISPLAY) && title $HOSTNAME
