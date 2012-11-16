@@ -5,6 +5,6 @@ defhstatus "\005t"
 hardstatus alwayslastline "%{= bC}%H %{by}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{-}%?%+Lw%? %=%{= bC} %0c:%s "
 hardstatus on
 
-screen -t mis 2
-screen -t tmp 1
-screen -t wrk 0
+screen -t tmp 2
+screen -t wrk 1
+screen -t apt 0
