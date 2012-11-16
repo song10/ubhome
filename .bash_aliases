@@ -15,14 +15,19 @@ alias cd3='cd ../../..'
 alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
 alias scr='screen -D -R'
-PS1='\[\e]0;\u@\h:\w\a\]\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
+#PS1='\[\e]0;\u@\h:\w\a\]\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
+PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/my/bin:~/opt/bin
 source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
 export EDITOR=vi
 
-function title {
+function tabtitle {
   echo -en "\033]2;$1\007"
+}
+
+function scrtitle {
+  echo -en '\033k'$1'\033\\'
 }
 
 if [ -f ~/.bash_insyde ]; then
@@ -31,4 +36,4 @@ fi
 
 rm -f ~/.goutputstream-*
 
-x=$(env|grep DISPLAY) && title $HOSTNAME
+x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
