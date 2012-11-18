@@ -37,3 +37,4 @@ fi
 rm -f ~/.goutputstream-*
 
 x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
+cd ~
