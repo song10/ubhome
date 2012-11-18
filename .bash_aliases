@@ -17,7 +17,7 @@ alias cd5='cd ../../../../..'
 alias scr='screen -D -R'
 #PS1='\[\e]0;\u@\h:\w\a\]\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
-PATH=$PATH:~/bin:~/my/bin:~/opt/bin
+PATH=~/bin:~/my/bin:~/opt/bin:$PATH
 source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
 export EDITOR=vi
