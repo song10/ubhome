@@ -9,4 +9,4 @@ export LC_ALL=en_US.UTF-8
 #sudo dpkg-reconfigure locales
 export CIMPLE_MOF_PATH=/usr/share/mof/cim-current
 export PATH=$PATH:/opt/omi-1.0.4/bin
-payrolltime
+daily #payrolltime
