@@ -19,7 +19,7 @@ alias scr='screen -D -R'
 PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=~/bin:~/my/bin:~/opt/bin:$PATH
 source ~/bin/langrc
-export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/
+export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/:/usr/local/lib/node_modules/
 export EDITOR=vi
 
 function tabtitle {
