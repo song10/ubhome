@@ -20,6 +20,7 @@
 [core]
 	editor = vim
 	whitespace = tabwidth=8
+	pager = less -x2
 
 [apply]
 	whitespace = strip
