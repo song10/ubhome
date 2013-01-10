@@ -30,11 +30,11 @@ function scrtitle {
   echo -en '\033k'$1'\033\\'
 }
 
+rm -f ~/.goutputstream-*
+
 if [ -f ~/.bash_insyde ]; then
     . ~/.bash_insyde
 fi
-
-rm -f ~/.goutputstream-*
 
 x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
 cd ~
