@@ -1,3 +1,5 @@
+tabs -2
+
 alias rm='rm -i'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls'
