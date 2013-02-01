@@ -1,0 +1,6 @@
+export ANDROIDSDK=~/android/adt-bundle-linux-x86_64/sdk
+export ANDROIDNDK=~/android/android-ndk-r8d
+export ANDROIDNDKVER=r8d
+export ANDROIDAPI=17
+export NDK_TOOLCHAIN_VERSION=4.7
+export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH

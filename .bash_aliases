@@ -34,9 +34,8 @@ function scrtitle {
 
 rm -f ~/.goutputstream-*
 
-if [ -f ~/.bash_insyde ]; then
-    . ~/.bash_insyde
-fi
+if [ -f ~/.bash_insyde ]; then . ~/.bash_insyde; fi
+if [ -f ~/.bash_android ]; then . ~/.bash_android; fi
 
 x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
 cd ~
