@@ -2,7 +2,6 @@ tabs -2
 
 alias rm='rm -i'
 alias ls='ls --color=auto --group-directories-first'
-uname -a | grep -i darwin 2>&1 >/dev/null && unalias ls
 alias l='ls'
 alias ll='ls -hlF'
 alias lll='ll -a'
@@ -37,6 +36,8 @@ rm -f ~/.goutputstream-*
 
 if [ -f ~/.bash_insyde ]; then . ~/.bash_insyde; fi
 if [ -f ~/.bash_android ]; then . ~/.bash_android; fi
+
+uname -a | grep -i darwin 2>&1 >/dev/null && if [ -f ~/.bash_osx ]; then . ~/.bash_osx; fi
 
 x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
 cd ~
