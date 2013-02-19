@@ -1,4 +1,5 @@
 umask 002
+export XO=~/site/xo/xo
 INSYDEEMAIL='rex.cho@insyde.com'
 export EMAIL="Rex Cho <$INSYDEEMAIL>"
 alias mail="mail -aFrom:$INSYDEEMAIL"
