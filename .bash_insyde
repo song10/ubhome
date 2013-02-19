@@ -1,4 +1,5 @@
 umask 002
+export UB=~/site/ubs64/ubs64
 export XO=~/site/xo/xo
 INSYDEEMAIL='rex.cho@insyde.com'
 export EMAIL="Rex Cho <$INSYDEEMAIL>"
