@@ -4,3 +4,6 @@ export ANDROIDNDKVER=r8d
 export ANDROIDAPI=17
 export NDK_TOOLCHAIN_VERSION=4.7
 export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH
+
+export PATH=/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288:$PATH
+export SENCHA_CMD_3_0_0="/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288"
