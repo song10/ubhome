@@ -1,9 +1,43 @@
-export ANDROIDSDK=~/android/adt-bundle-linux-x86_64/sdk
-export ANDROIDNDK=~/android/android-ndk-r8d
-export ANDROIDNDKVER=r8d
-export ANDROIDAPI=17
-export NDK_TOOLCHAIN_VERSION=4.7
-export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH
+OS=$(uname)
+case $OS in
+	'Darwin')
+		OS='osx'
+		;;
+	'Linux')
+		OS='linux'
+		;;
+	*)
+		echo "Unknown OS!"
+		usage
+esac
 
-export PATH=/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288:$PATH
-export SENCHA_CMD_3_0_0="/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288"
+do_common_prefix(){
+	:
+}
+
+do_osx(){
+	:
+	export ANDROIDSDK=~/my/app/dnl/adt-bundle-mac-x86_64-20130219/sdk
+	export ANDROIDNDK=~/my/app/dnl/android-ndk-r8d
+}
+
+do_linux(){
+	:
+	export ANDROIDSDK=~/my/app/dnl/adt-bundle-linux-x86_64-20130219/sdk
+	export ANDROIDNDK=~/my/app/dnl/android-ndk-r8d
+}
+
+do_common_postfix(){
+	:
+	export ANDROIDNDKVER=r8d
+	export ANDROIDAPI=17
+	export NDK_TOOLCHAIN_VERSION=4.7
+	export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH
+
+	export PATH=/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288:$PATH
+	export SENCHA_CMD_3_0_0="/home/song10/my/cordova/git/Sencha/Cmd/3.0.2.288"
+}
+
+do_common_prefix
+do_$OS $*
+do_common_postfix
