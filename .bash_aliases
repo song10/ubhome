@@ -22,6 +22,7 @@ PATH=~/bin:~/my/bin:~/opt/bin:$PATH
 source ~/bin/langrc
 export NODE_PATH=.:./node_modules/:~/opt/lib/node_modules/:/usr/local/lib/node_modules/
 export EDITOR=vi
+export APP=~/my/app
 
 function tabtitle {
   echo -en "\033]2;$1\007"
