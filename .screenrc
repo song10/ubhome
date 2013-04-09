@@ -5,6 +5,10 @@ defhstatus "\005t"
 hardstatus alwayslastline "%{= bC}%H %{by}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{-}%?%+Lw%? %=%{= bC} %0c:%s "
 hardstatus on
 
-screen -t tmp 2
-screen -t wrk 1
-screen -t apt 0
+screen 6
+screen -t www 5
+screen -t stylus 4
+screen -t jade 3
+screen -t mongoose 2
+screen -t app 1
+screen -t site 0
