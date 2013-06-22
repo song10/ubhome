@@ -17,27 +17,18 @@ do_common_prefix(){
 
 do_osx(){
 	:
-	export ANDROIDSDK=~/my/app/dnl/adt-bundle-mac-x86_64-20130219/sdk
-	export ANDROIDNDK=~/my/app/dnl/android-ndk-r8d
 	alias xlogout="osascript -e 'tell application \"System Events\" to log out'"
 	alias xup="sudo softwareupdate -i -a"
 }
 
 do_linux(){
 	:
-	export ANDROIDSDK=~/my/app/dnl/adt-bundle-linux-x86_64-20130219/sdk
-	export ANDROIDNDK=~/my/app/dnl/android-ndk-r8d
 }
 
 do_common_postfix(){
 	:
-	export ANDROIDNDKVER=r8d
-	export ANDROIDAPI=17
-	export NDK_TOOLCHAIN_VERSION=4.7
-	export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH
-
+	source ~/my/app/android/envrc
 	export PATH=$PATH:$APP/bin
-	export SENCHA_CMD_3_0_0=~/my/app/git/Sencha/Cmd/3.0.2.288
 }
 
 do_common_prefix
