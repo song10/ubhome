@@ -27,7 +27,7 @@ do_linux(){
 
 do_common_postfix(){
 	:
-	source ~/my/app/android/envrc
+	source ~/my/android/envrc
 	export PATH=$PATH:$APP/bin
 }
 
