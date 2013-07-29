@@ -34,6 +34,7 @@ function scrtitle {
 
 rm -f ~/.goutputstream-*
 rm -f ~/.Xauthority.*
+rm -f ~/libpeerconnection.log
 
 if [ -f ~/.bash_insyde ]; then . ~/.bash_insyde; fi
 if [ -f ~/.bash_android ]; then . ~/.bash_android; fi
