@@ -16,6 +16,7 @@
 	dif = diff -w
 	ls  = ls-files
 #	praise = blame
+	sm = submodule
 
 [core]
 	editor = vim
