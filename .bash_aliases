@@ -1,3 +1,6 @@
+. ~/.profile
+nvm use v0.10.26
+
 tabs -2
 
 alias rm='rm -i'
