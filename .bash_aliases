@@ -1,5 +1,5 @@
-. ~/.profile
-nvm use v0.10.26
+#. ~/.profile
+which nvm && nvm use v0.10.26
 
 tabs -2
 
