@@ -1,2 +1,0 @@
-{{=it.get}};
-{{=it.build}}{{ it._.print("Hello"); }}

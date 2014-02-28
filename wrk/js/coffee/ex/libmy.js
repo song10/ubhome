@@ -1,1 +1,0 @@
-alert = print = console.log
