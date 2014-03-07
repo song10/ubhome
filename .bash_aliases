@@ -1,5 +1,5 @@
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-type nvm >& /dev/null && nvm use v0.10.26
+type nvm >& /dev/null && nvm use default
 
 tabs -2
 
