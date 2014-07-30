@@ -24,7 +24,7 @@ alias scr='screen -D -R'
 PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/opt/bin:~/my/bin:~/my/opt/bin:~/tmp/rakudo/install/bin:$PATH
 source ~/bin/langrc
-export NODE_PATH=.:./node_modules/:/usr/local/lib/node_modules/:/usr/lib/node_modules:/usr/local/share/npm/lib/node_modules:$NODE_PATH
+export NODE_PATH=.:./local_modules:./node_modules/:/usr/local/lib/node_modules/:/usr/lib/node_modules:/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export EDITOR=vi
 export APP=~/my/app
 
