@@ -40,9 +40,6 @@ rm -f ~/.goutputstream-*
 rm -f ~/.Xauthority.*
 rm -f ~/libpeerconnection.log
 
-if [ -f ~/.bash_insyde ]; then . ~/.bash_insyde; fi
-if [ -f ~/.bash_android ]; then . ~/.bash_android; fi
-
 uname -a | grep -i darwin 2>&1 >/dev/null && if [ -f ~/.bash_osx ]; then . ~/.bash_osx; fi
 
 x=$(env|grep DISPLAY) && tabtitle $HOSTNAME
