@@ -1,5 +1,5 @@
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-type nvm >& /dev/null && nvm use default
+type nvm >& /dev/null && nvm use stable
 
 tabs -2
 
@@ -27,6 +27,11 @@ source ~/bin/langrc
 export NODE_PATH=.:./local_modules:./node_modules/:/usr/local/lib/node_modules/:/usr/lib/node_modules:/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export EDITOR=vi
 export APP=~/my/app
+
+export LANGUAGE="en"
+export LANG="C"
+export LC_MESSAGES="C"
+export LC_ALL=en_US.UTF-8
 
 function tabtitle {
   echo -en "\033]2;$1\007"
