@@ -1,7 +1,3 @@
-# This loads NVM
-[ -s ~/.nvm/nvm.sh ] && . ~/.nvm/nvm.sh
-type nvm >& /dev/null && nvm use stable
-
 tabs -2
 
 alias rm='rm -i'
@@ -27,7 +23,8 @@ alias nd='node --harmony'
 PS1='\[\033[0;31m\]\u\[\033[0;35m\]@\h:\[\e[33m\]\w\[\e[0m\]\n> '
 PATH=$PATH:~/bin:~/opt/bin:~/my/bin:~/my/opt/bin:~/tmp/rakudo/install/bin:$PATH
 source ~/bin/langrc
-export NODE_PATH=.:./my_modules:./node_modules:~/.nvm/versions/v0.12.0/lib/node_modules:~/.nvm/versions/node/v0.12.0/lib/node_modules:/usr/local/lib/node_modules:/usr/lib/node_modules:/usr/local/share/npm/lib/node_modules:$NODE_PATH
+export NODE_PATH=.:./my_modules:./node_modules:~/.nvm/versions/node/v0.12.2/lib/node_modules:$NODE_PATH
+#/usr/local/lib/node_modules:/usr/lib/node_modules:/usr/local/share/npm/lib/node_modules
 export EDITOR=vi
 export APP=~/my/app
 
