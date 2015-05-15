@@ -1,3 +1,5 @@
+[ -f .bash_profile ] && . .bash_profile
+
 tabs -2
 
 alias rm='rm -i'
